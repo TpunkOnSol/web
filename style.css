@@ -1,0 +1,135 @@
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Arial Black', Arial, sans-serif;
+    background: linear-gradient(to bottom,#001a33 0%,#003d5c 20%,#006994 40%,#0099cc 60%,#00b8e6 80%,#00d4ff 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Waves */
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 150px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 1000px;
+    animation: wave 8s infinite ease-in-out;
+}
+.wave:nth-child(2){top:100px; animation: wave 10s infinite ease-in-out reverse; background: rgba(255,255,255,0.05);}
+.wave:nth-child(3){top:200px; animation: wave 12s infinite ease-in-out; background: rgba(255,255,255,0.08);}
+@keyframes wave {0%,100%{transform:translateX(-50%) translateY(0) rotate(0deg);}50%{transform:translateX(-30%) translateY(-20px) rotate(5deg);}}
+
+/* Bubbles */
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in;
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.5);
+}
+@keyframes rise {0%{bottom:-100px;opacity:0;}10%{opacity:1;}90%{opacity:1;}100%{bottom:110vh;opacity:0;}}
+
+/* Fish */
+.fish {position:absolute;font-size:40px;animation:swim 15s infinite linear;}
+@keyframes swim {0%{left:-100px;transform:scaleX(1);}48%{transform:scaleX(1);}50%{transform:scaleX(-1);}98%{transform:scaleX(-1);}100%{left:110%;transform:scaleX(1);}}
+
+/* Seaweed */
+.seaweed {position:absolute;bottom:0;width:30px;border-radius:50% 50% 0 0; background:linear-gradient(to top,#00ff88,#00cc6a,transparent); animation:sway 4s infinite ease-in-out; transform-origin:bottom center;}
+@keyframes sway {0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);}}
+
+/* Coral */
+.coral {position:absolute;bottom:0;font-size:60px;animation:coralSway 5s infinite ease-in-out; transform-origin:bottom center; filter:drop-shadow(0 0 10px rgba(255,100,150,0.5));}
+@keyframes coralSway {0%,100%{transform:rotate(-3deg) scale(1);}50%{transform:rotate(3deg) scale(1.05);}}
+
+/* Jellyfish */
+.jellyfish {position:absolute;font-size:50px;animation:jellyfloat 12s infinite ease-in-out;}
+@keyframes jellyfloat {0%,100%{transform:translateY(0) translateX(0);}25%{transform:translateY(-30px) translateX(20px);}50%{transform:translateY(-60px) translateX(0);}75%{transform:translateY(-30px) translateX(-20px);}}
+
+/* Starfish */
+.starfish {position:absolute;bottom:10px;font-size:40px;animation:starRotate 20s infinite linear;}
+@keyframes starRotate {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+
+/* Shells */
+.shell {position:absolute;bottom:5px;font-size:35px;animation:shellShine 3s infinite ease-in-out;}
+@keyframes shellShine {0%,100%{filter:brightness(1);}50%{filter:brightness(1.5);}}
+
+/* Rocks */
+.rock {position:absolute;bottom:0;width:80px;height:60px;background:linear-gradient(135deg,#4a4a4a,#2a2a2a);border-radius:50% 50% 20% 20%; box-shadow: inset -5px -5px 10px rgba(0,0,0,0.5);}
+
+/* Light rays */
+.light-ray {position:absolute;top:0;width:100px;height:100%;background:linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 50%, transparent 100%); animation:lightShift 8s infinite ease-in-out; transform-origin:top center;}
+@keyframes lightShift {0%,100%{transform:translateX(-20px) rotate(-5deg);opacity:0.3;}50%{transform:translateX(20px) rotate(5deg);opacity:0.6;}}
+
+/* Sea turtles */
+.sea-turtle {position:absolute;font-size:45px;animation:turtleSwim 25s infinite linear; filter:drop-shadow(0 0 10px rgba(0,255,136,0.5));}
+@keyframes turtleSwim {0%{left:-100px;transform:scaleX(1) translateY(0);}25%{transform:scaleX(1) translateY(-20px);}50%{transform:scaleX(-1) translateY(0);}75%{transform:scaleX(-1) translateY(20px);}100%{left:110%;transform:scaleX(1) translateY(0);}}
+
+/* Treasure chest */
+.treasure {position:absolute;bottom:20px;font-size:50px;animation:treasureGlow 2s infinite ease-in-out;}
+@keyframes treasureGlow {0%,100%{filter:drop-shadow(0 0 5px gold) brightness(1);transform:scale(1);}50%{filter:drop-shadow(0 0 20px gold) brightness(1.3);transform:scale(1.05);}}
+
+/* Submarine */
+.submarine {position:absolute;font-size:40px;animation:submerge 30s infinite linear;}
+@keyframes submerge {0%{left:-100px;top:20%;}100%{left:110%;top:60%;}}
+
+/* Container & Header */
+.container {max-width:1200px;margin:0 auto;padding:20px;position:relative; z-index:1;}
+header {text-align:center;padding:40px 20px;animation:fadeInDown 1s ease;}
+@keyframes fadeInDown {from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
+.logo-container {display:inline-block;position:relative;animation:bounce 2s infinite;}
+@keyframes bounce {0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);}}
+.logo {width:300px;height:300px;border-radius:50%;border:8px solid rgb(137, 219, 171); box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 40px rgba(255,255,255,0.3); object-fit:cover; transition:transform 0.3s ease;}
+.logo:hover{transform:scale(1.1) rotate(5deg);}
+h1 {font-size:4em;color:#fff;text-shadow:4px 4px 0 #000,8px 8px 20px rgba(0,0,0,0.5);margin:30px 0 10px;letter-spacing:3px;animation:glow 2s ease-in-out infinite alternate;}
+@keyframes glow {from{text-shadow:4px 4px 0 #000,8px 8px 20px rgba(0,0,0,0.5),0 0 20px #fff;}to{text-shadow:4px 4px 0 #000,8px 8px 20px rgba(0,0,0,0.5),0 0 40px #fff,0 0 60px #00ff88;}}
+.tagline {font-size:1.5em;color:#00ff88;text-shadow:2px 2px 4px rgba(0,0,0,0.7);margin-bottom:40px;font-weight:bold;}
+h2 {font-size:2em;color:#fff;text-shadow:4px 4px 0 #000,8px 8px 20px rgba(0,0,0,0.5);margin:30px 0 10px;letter-spacing:3px;animation:glow 2s ease-in-out infinite alternate;}
+@keyframes glow {from{text-shadow:4px 4px 0 #000,8px 8px 20px rgba(0,0,0,0.5),0 0 20px #fff;}to{text-shadow:4px 4px 0 #000,8px 8px 20px rgba(0,0,0,0.5),0 0 40px #fff,0 0 60px #00ff88;}}
+.tagline {font-size:1.5em;color:#00ff88;text-shadow:2px 2px 4px rgba(0,0,0,0.7);margin-bottom:40px;font-weight:bold;}
+
+/* Main content */
+.main-content {background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:30px;padding:50px;margin:40px 0;border:3px solid rgba(255,255,255,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:fadeInUp 1s ease;}
+@keyframes fadeInUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.description {font-size:1.3em;color:#fff;text-align:center;line-height:1.8;margin-bottom:40px;text-shadow:2px 2px 4px rgba(0,0,0,0.7);}
+
+/* CTA buttons */
+.cta-buttons {display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:40px 0;}
+.btn {padding:20px 50px;font-size:1.3em;font-weight:bold;text-transform:uppercase;border:none;border-radius:50px;cursor:pointer;transition:all 0.3s ease;text-decoration:none;display:inline-block;box-shadow:0 10px 30px rgba(0,0,0,0.3);position:relative;overflow:hidden;}
+.btn::before {content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,0.3);transform:translate(-50%,-50%);transition:width 0.6s,height 0.6s;}
+.btn:hover::before {width:300px;height:300px;}
+.btn span {position:relative;z-index:1;}
+.btn-primary {background:linear-gradient(45deg,#00ff88,#00cc6a);color:#000;}
+.btn-primary:hover {transform:translateY(-5px) scale(1.05);box-shadow:0 15px 40px rgba(0,255,136,0.5);}
+.btn-secondary {background:linear-gradient(45deg,#fff,#e0e0e0);color:#000;}
+.btn-secondary:hover {transform:translateY(-5px) scale(1.05);box-shadow:0 15px 40px rgba(255,255,255,0.5);}
+
+/* Contract Address */
+.ca-container {display:flex;justify-content:center;margin-bottom:40px;}
+.ca-box {display:flex;justify-content:center;align-items:center;gap:15px;background:rgba(0,0,0,0.5);border:3px solid #00ff88;border-radius:15px;padding:20px;box-shadow:0 0 30px rgba(0,255,136,0.3);animation:pulse 2s infinite;}
+@keyframes pulse {0%,100%{box-shadow:0 0 30px rgba(0,255,136,0.3);}50%{box-shadow:0 0 50px rgba(0,255,136,0.6);}}
+.ca-box code {font-size:1.1em;color:#fff;font-family:'Courier New', monospace;background:rgba(255,255,255,0.1);padding:10px 15px;border-radius:8px;word-break:break-all;}
+.copy-btn {background:#00ff88;color:#000;border:none;padding:12px 24px;border-radius:8px;font-weight:bold;cursor:pointer;transition:all 0.3s ease;font-size:1em;white-space:nowrap;}
+.copy-btn:hover{background:#00cc6a;transform:scale(1.1);box-shadow:0 5px 20px rgba(0,255,136,0.5);}
+.copy-btn:active{transform:scale(0.95);}
+
+/* Footer */
+footer{text-align:center;padding:40px 20px;color:#fff;font-size:1.1em;text-shadow:2px 2px 4px rgba(0,0,0,0.7);}
+.social-links{display:flex;justify-content:center;gap:20px;margin-top:20px;}
+.social-icon{width:50px;height:50px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;transition:all 0.3s ease;text-decoration:none;border:2px solid rgba(255,255,255,0.3);}
+.social-icon:hover{background:#00ff88;color:#000;transform:scale(1.2) rotate(360deg);}
+
+
+
+/* Responsive */
+@media (max-width:768px){
+    h1{font-size:2.5em;}
+    .logo{width:200px;height:200px;}
+    .main-content{padding:30px 20px;}
+    .btn{padding:15px 30px;font-size:1.1em;}
+    .description{font-size:1.1em;}
+    .ca-box{flex-direction:column;gap:10px;}
+    .ca-box code{font-size:0.9em;}
+}
